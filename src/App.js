@@ -1,10 +1,13 @@
-import './App.css'
+import AddPopup from "./components/AddPopup";
+import Table from "./components/table";
 
 const App = () => {
-  return <>
-    <h1>React Table</h1>
-    
-  </>
-}
+  return (
+    <div>
+      <AddPopup />
+      <Table />;
+    </div>
+  );
+};
 
 export default App;
