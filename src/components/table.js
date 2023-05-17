@@ -20,8 +20,8 @@ function Table() {
     }, [])
 
     function checkValidDob({ dob }) {
-        const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-        if (!regex.test(dob)) {
+        const format = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!format.test(dob)) {
             return false;
         }
         const [ngay, thang, nam] = dob.split('/').map(Number);
@@ -43,7 +43,8 @@ function Table() {
         if (ngay < 1) return false;
 
         const currentYear = new Date().getFullYear();
-        if (nam > currentYear || nam < 1950) return false;
+        const currentMonth = new Date().getMonth() + 1;
+        if (nam > currentYear || (thang > currentMonth && nam >= currentYear) || nam < 1950) return false;
 
         return true;
     }
@@ -167,7 +168,7 @@ function Table() {
                         <br />
                     </div>
                     <div>
-                        <input type="text" placeholder="Quê quán" value={hometown} onChange={e => setHometown(e.target.value)} />
+                        <input type="text" placeholder="Quê quán" value={hometown} onChange={e => setHometown(e.target.value.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" "))} />
                         {errors.hometown && <span>{errors.hometown}</span>}
                         <br />
                     </div>
