@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./AddPopup.css";
 
@@ -23,6 +23,13 @@ function AddPopup() {
     setHometown("");
     setErrors({});
   };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/users")
+      .then((res) => setData(res.data))
+      .catch((er) => console.log(er));
+  }, []);
 
   function checkValidDob({ dob }) {
     const format = /^\d{2}\/\d{2}\/\d{4}$/;
@@ -160,7 +167,7 @@ function AddPopup() {
       !data.find((sv) => sv.name === name) &&
       hometown.length > 0 &&
       hometown.length <= 100 &&
-      !data.find((sv) => sv.name === hometown) &&
+      !data.find((sv) => sv.hometown === hometown) &&
       checkValidDob({ dob })
     ) {
       axios
