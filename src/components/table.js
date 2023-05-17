@@ -91,7 +91,11 @@ function Table() {
         name: "Họ tên có độ dài quá 100 ký tự!",
       }));
     }
-    if (data.filter((sv) => sv.id !== editId).find((sv) => sv.hometown === uhometown)) {
+    if (
+      data
+        .filter((sv) => sv.id !== editId)
+        .find((sv) => sv.hometown === uhometown)
+    ) {
       setErrors((prev) => ({ ...prev, hometown: "Quê quán đã tồn tại!" }));
     }
     if (!uhometown) {
@@ -124,7 +128,9 @@ function Table() {
     if (
       uhometown.length > 0 &&
       uhometown.length <= 100 &&
-      !data.filter((sv) => sv.id !== editId).find((sv) => sv.hometown === uhometown)
+      !data
+        .filter((sv) => sv.id !== editId)
+        .find((sv) => sv.hometown === uhometown)
     ) {
       setErrors((prev) => ({ ...prev, hometown: "" }));
     }
@@ -138,7 +144,9 @@ function Table() {
       !data.filter((sv) => sv.id !== editId).find((sv) => sv.name === uname) &&
       uhometown.length > 0 &&
       uhometown.length <= 100 &&
-      !data.filter((sv) => sv.id !== editId).find((sv) => sv.hometown === uhometown) &&
+      !data
+        .filter((sv) => sv.id !== editId)
+        .find((sv) => sv.hometown === uhometown) &&
       checkValidDob({ udob })
     ) {
       axios
@@ -169,7 +177,7 @@ function Table() {
 
   return (
     <div className="container">
-      <table className="table table-striped">
+      <table className="table table-striped table-bordered rounded">
         <thead>
           <tr>
             <th>TT</th>
@@ -191,13 +199,17 @@ function Table() {
                   <input
                     type="text"
                     value={uname}
-                    onChange={(e) => usetName(e.target.value
-                      .split(" ")
-                      .map(
-                        (word) =>
-                          word.charAt(0).toUpperCase() + word.slice(1)
+                    onChange={(e) =>
+                      usetName(
+                        e.target.value
+                          .split(" ")
+                          .map(
+                            (word) =>
+                              word.charAt(0).toUpperCase() + word.slice(1)
+                          )
+                          .join(" ")
                       )
-                      .join(" "))}
+                    }
                   />
                   <br />
                   {errors.name && <span className="error">{errors.name}</span>}
@@ -215,16 +227,22 @@ function Table() {
                   <input
                     type="text"
                     value={uhometown}
-                    onChange={(e) => usetHometown(e.target.value
-                      .split(" ")
-                      .map(
-                        (word) =>
-                          word.charAt(0).toUpperCase() + word.slice(1)
+                    onChange={(e) =>
+                      usetHometown(
+                        e.target.value
+                          .split(" ")
+                          .map(
+                            (word) =>
+                              word.charAt(0).toUpperCase() + word.slice(1)
+                          )
+                          .join(" ")
                       )
-                      .join(" "))}
+                    }
                   />
                   <br />
-                  {errors.hometown && <span className="error">{errors.hometown}</span>}
+                  {errors.hometown && (
+                    <span className="error">{errors.hometown}</span>
+                  )}
                 </td>
                 <td>
                   <button
