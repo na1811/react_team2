@@ -3,8 +3,8 @@
     {
       "id": "20020142",
       "name": "Hoàng Quốc Anh",
-      "dob": "15/02/2003",
-      "hometown": "Hải Phòng"
+      "dob": "15/02/2004",
+      "hometown": "Cà Mau"
     },
     {
       "id": "20020143",
@@ -40,7 +40,7 @@
       "id": "20020148",
       "name": "Trần Quốc Thái",
       "dob": "16/08/2003",
-      "hometown": "Hà Nội"
+      "hometown": "Quảng Nam"
     },
     {
       "id": "20020149",
@@ -53,6 +53,12 @@
       "name": "Đỗ Duy Hưng",
       "dob": "19/11/2003",
       "hometown": "Hải Phòng"
+    },
+    {
+      "id": "20020150",
+      "name": "Nguyễn Đức Hùng",
+      "dob": "20/02/2002",
+      "hometown": "Kiên Giang"
     }
   ]
 }
