@@ -177,8 +177,8 @@ function Table() {
 
   return (
     <div className="container">
-      <table className="table table-striped table-bordered rounded">
-        <thead>
+      <table className="table table-striped table-bordered">
+        <thead className="table-success">
           <tr>
             <th>TT</th>
             <th>Mã SV</th>
@@ -249,7 +249,7 @@ function Table() {
                     className="btn btn-success btn-sm"
                     onClick={() => handleUpdate()}
                   >
-                    Update
+                    Cập nhật
                   </button>
                 </td>
               </tr>
