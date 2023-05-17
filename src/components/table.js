@@ -165,6 +165,15 @@ function Table() {
     }
   };
 
+  const handleCancel = () => {
+    axios
+    .get("http://localhost:3000/users")
+    .then((res) => {
+      window.location.reload();
+    })
+    .catch((er) => console.log(er));
+  }
+
   const handleDelete = (id) => {
     axios
       .delete("http://localhost:3000/users/" + id)
@@ -172,7 +181,6 @@ function Table() {
         window.location.reload();
       })
       .catch((er) => console.log(er));
-    setEdit(id);
   };
 
   return (
@@ -250,6 +258,14 @@ function Table() {
                     onClick={() => handleUpdate()}
                   >
                     Cập nhật
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="btn btn-light btn-sm"
+                    onClick={() => handleCancel()}
+                  >
+                    Hủy
                   </button>
                 </td>
               </tr>

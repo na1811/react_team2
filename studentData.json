@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": "20020142",
-      "name": "Hoàng Quốc Anh",
-      "dob": "15/02/2004",
-      "hometown": "Cà Mau"
-    },
-    {
       "id": "20020143",
       "name": "Trịnh Văn Sơn",
       "dob": "15/05/2003",
@@ -53,6 +47,18 @@
       "name": "Đỗ Duy Hưng",
       "dob": "19/11/2003",
       "hometown": "Hải Phòng"
+    },
+    {
+      "id": "20020150",
+      "name": "Nguyễn Đức Hùng",
+      "dob": "20/02/2002",
+      "hometown": "Kiên Giang"
+    },
+    {
+      "id": "20020142",
+      "name": "Trịnh Hoàng Anh",
+      "dob": "29/01/2003",
+      "hometown": "Bắc Giang"
     }
   ]
 }
